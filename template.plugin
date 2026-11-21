@@ -1,11 +1,10 @@
-#!name=Google One App
-#!desc=test Ultra SKU000
+#!name=Httpbin
+#!desc=test Httpbin
 #!author=template
 
 [MITM]
-hostname = %APPEND% subscriptionsmobile-pa.googleapis.com
-
+hostname = %APPEND% httpbin.org
 
 [Script]
-http-response script-path=https://raw.githubusercontent.com/bintabi/test111/refs/heads/main/replace.js, requires-body=true, tag=测试触发
+http-response ^https:\/\/httpbin\.org script-path=https://raw.githubusercontent.com/bintabi/test111/refs/heads/main/replace.js, requires-body=true, tag=测试触发
 
