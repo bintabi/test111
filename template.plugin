@@ -1,10 +1,11 @@
 #!name=Google One App
-#!desc=test Ultra SKU123
+#!desc=test Ultra SKU000
 #!author=template
 
 [MITM]
 hostname = %APPEND% subscriptionsmobile-pa.googleapis.com
 
+
 [Script]
-http-response ^https?:\/\/subscriptionsmobile-pa\.googleapis\.com script-path=https://raw.githubusercontent.com/bintabi/test111/refs/heads/main/replace.js, requires-body=true, tag=测试触发
+http-response script-path=https://raw.githubusercontent.com/bintabi/test111/refs/heads/main/replace.js, requires-body=true, tag=测试触发
 
