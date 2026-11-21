@@ -6,5 +6,5 @@
 hostname = %APPEND% httpbin.org
 
 [Script]
-http-response ^https:\/\/httpbin\.org script-path=https://raw.githubusercontent.com/bintabi/test111/refs/heads/main/replace.js, requires-body=true, tag=测试触发
+http-response ^https?:\/\/httpbin\.org script-path=https://raw.githubusercontent.com/bintabi/test111/refs/heads/main/replace.js, requires-body=true, tag=测试触发
 
