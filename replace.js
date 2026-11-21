@@ -1,12 +1,16 @@
 let body = $response.body;
 
-if (body) {
-  // 30TB 规则（默认开启）
-  body = body.replace(/30tb\.ai\.pro\.m/g, "30tb.m");
-  // 20TB 规则（默认关闭，需要时取消下面这行注释）
-  body = body.replace(/20tb\.m\.v2/g, "20tb.m");
-
-  $done({ body });
-} else {
+if (!body) {
   $done({});
+} else {
+  let text = body;
+
+  text = text.replace(/g1\.ios\.\d+gb\.m/g, "g1.20tb.3months_ip_90p.acq");
+  text = text.replace(/g1\.ios\.\d+tb\.m\.v2/g, "g1.20tb.3months_ip_90p.acq");
+  text = text.replace(/30tb\.ai\.pro\.m/g, "g1.20tb.3months_ip_90p.acq");
+
+  // 30TB 1off
+  // "g1.ai.ultra.3months_ip_90p.acq"
+
+  $done({ body: text });
 }
